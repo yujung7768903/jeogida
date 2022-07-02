@@ -8,4 +8,26 @@
         SELECT * FROM user
     </select>
 
+    <select id="findByEmail" parameterType="string" resultType="com.apartment.parkingspotbackend.dto.UserDto">
+        SELECT * FROM user WHERE email = #{email}
+    </select>
+
+    <insert id="insertUser" parameterType="com.apartment.parkingspotbackend.dto.UserDto">
+        INSERT
+        INTO user(email, nickname, password)
+        VALUES (#{email}, #{nickname}, #{password})
+    </insert>
+
+    <update id="updateUser" parameterType="com.apartment.parkingspotbackend.dto.UserDto">
+        UPDATE user
+        SET email = #{email}, nickname = #{nickname}, password = #{password}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="_integer">
+        DELETE
+        FROM user
+        WHERE id = #{id}
+    </delete>
+
 </mapper>
