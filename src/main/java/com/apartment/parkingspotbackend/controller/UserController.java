@@ -41,7 +41,7 @@ public class UserController {
         return userService.updateUser(id, userDto);
     }
 
-    // 유저 정보 삭제
+    // 유저 삭제
     @DeleteMapping("/user/{id}")
     public boolean deleteUser(@PathVariable Integer id) {
         return userService.deleteUser(id);

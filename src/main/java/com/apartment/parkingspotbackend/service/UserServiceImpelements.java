@@ -52,7 +52,7 @@ public class UserServiceImpelements implements UserService{
         }
     }
 
-    // 유저 정보 삭제
+    // 유저 삭제
     @Override
     public boolean deleteUser(Integer id) {
         try {
