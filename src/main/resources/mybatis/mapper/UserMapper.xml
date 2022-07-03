@@ -8,6 +8,10 @@
         SELECT * FROM user
     </select>
 
+    <select id="getUser" resultType="com.apartment.parkingspotbackend.dto.UserDto">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
     <select id="findByEmail" parameterType="string" resultType="com.apartment.parkingspotbackend.dto.UserDto">
         SELECT * FROM user WHERE email = #{email}
     </select>

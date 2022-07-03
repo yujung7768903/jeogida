@@ -18,6 +18,11 @@ public class UserServiceImpelements implements UserService{
         return userMapper.getUserList();
     }
 
+    @Override
+    public UserDto getUser(Integer id) {
+        return userMapper.getUser(id);
+    }
+
     // 이메일로 유저 찾기
     @Override
     public Integer findByEmail(String email) {

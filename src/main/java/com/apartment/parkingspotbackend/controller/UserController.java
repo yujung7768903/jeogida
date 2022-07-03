@@ -19,12 +19,18 @@ public class UserController {
 
     // 모든 유저 조회
     @GetMapping("/user")
-    public List<UserDto> getUser() {
+    public List<UserDto> getUserList() {
         return userService.getUserList();
     }
 
+    // 아이디로 특정 유저 정보 조회
+    @GetMapping("/user/{id}")
+    public UserDto getUser(@PathVariable Integer id) {
+        return userService.getUser(id);
+    }
+
     // 이메일로 유저 아이디 찾기
-    @GetMapping("/user/{email}")
+    @GetMapping("/user/id/{email}")
     public Integer findByEmail(@PathVariable String email) {
         return userService.findByEmail(email);
     }
